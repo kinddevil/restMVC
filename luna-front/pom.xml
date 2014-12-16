@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>luna</groupId>
+  <artifactId>luna-front</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+        <luna.version>0.0.1-SNAPSHOT</luna.version>
+        <maven.war.plugin.version>2.5</maven.war.plugin.version>
+        <jdk.version>1.7</jdk.version>
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+        <war.build.directory>target</war.build.directory>
+        <war.directory>WebContent</war.directory>
+        <war.name>luna-front</war.name>
+  </properties>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven.war.plugin.version}</version>
+                <configuration>
+                    <warSourceDirectory>${war.directory}</warSourceDirectory>
+                    <!-- <webXml>WebContent/WEB-INF/web.xml</webXml> -->
+                    <outputDirectory>${war.build.directory}</outputDirectory>
+                    <warName>${war.name}</warName>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+			    <!-- 
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<webXml>WebContent/WEB-INF/web.xml</webXml>
+						</configuration>
+					</execution>
+				</executions> 
+				-->
+            </plugin>
+           </plugins>
+    </build>
+</project>
